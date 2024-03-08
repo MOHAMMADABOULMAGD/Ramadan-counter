@@ -11,7 +11,7 @@ function updateCountdown() {
     var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
-    var daysText = (days === 2) ? "يوم" : "أيام";
+    var daysText = "يوم";
 
     var hoursText = "ساعة";
     if (hours > 3 && hours < 10) {
