@@ -5,6 +5,7 @@ var ramadanStartDate = new Date("March 11, 2024").getTime();
 function updateCountdown() {
     var now = new Date().getTime();
     var timePassed = now - ramadanStartDate;
+    var absoluteTimePassed = Math.abs(timePassed);
 
     if (timePassed >= 30 * 24 * 60 * 60 * 1000) {
         // إذا مر أكثر من 30 يومًا، قم بتغيير النص إلى انتهى رمضان منذ
