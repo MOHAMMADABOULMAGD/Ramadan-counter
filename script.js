@@ -21,26 +21,9 @@ function updateCountdown() {
     var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
-    var daysText = "يوم";
-
-    var hoursText = "ساعة";
-    if (hours > 3 && hours < 10) {
-        hoursText = "ساعات";
-    }
-
-    var minutesText = "دقيقة";
-    if (minutes > 3 && minutes < 11) {
-        minutesText = "دقائق";
-    }
-
-    var secondsText = "ثانية";
-    if (seconds > 10 && seconds <= 60) {
-        secondsText = "ثوانٍ";
-    }
-
     var countdownElement = document.getElementById("countdown");
-    var countdownPrefix = (timePassed >= 0) ? "بدأ رمضان منذ" : "باقي على رمضان";
-    countdownElement.innerHTML = countdownPrefix + " " + days + " " + daysText + " و " + hours + " " + hoursText + " و " + minutes + " " + minutesText + " و " + seconds + " " + secondsText;
+    var countdownPrefix = (timePassed >= 0) ? "بدأ رمضان" : "باقي على رمضان";
+    countdownElement.innerHTML = countdownPrefix;
 
     // التحديث كل ثانية
     setTimeout(updateCountdown, 1000);
