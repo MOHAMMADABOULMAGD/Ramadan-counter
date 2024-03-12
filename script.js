@@ -1,10 +1,14 @@
-// تاريخ بداية رمضان
-var ramadanStartDate = new Date("March 11, 2024").getTime();
-
 // تحديث العداد
 function updateCountdown() {
     var now = new Date().getTime();
     var timeRemaining = ramadanStartDate - now;
+
+    if (timeRemaining <= 0) {
+        // إذا مر أكثر من 30 يومًا، قم بتغيير النص إلى انتهى رمضان
+        var countdownElement = document.getElementById("countdown");
+        countdownElement.innerHTML = "انتهى رمضان";
+        return;
+    }
 
     var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
     var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
