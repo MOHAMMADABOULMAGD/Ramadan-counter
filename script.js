@@ -1,3 +1,6 @@
+// تاريخ بداية رمضان
+var ramadanStartDate = new Date("March 11, 2024").getTime();
+
 // تحديث العداد
 function updateCountdown() {
     var now = new Date().getTime();
