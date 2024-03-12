@@ -1,14 +1,16 @@
 // تحديث العداد
 function updateCountdown() {
     var now = new Date().getTime();
-    var timeRemaining = ramadanStartDate - now;
+    var timePassed = now - ramadanStartDate;
 
-    if (timeRemaining <= 0) {
-        // إذا مر أكثر من 30 يومًا، قم بتغيير النص إلى انتهى رمضان
+    if (timePassed >= 30 * 24 * 60 * 60 * 1000) {
+        // إذا مر أكثر من 30 يومًا، قم بتغيير النص إلى انتهى رمضان منذ
         var countdownElement = document.getElementById("countdown");
-        countdownElement.innerHTML = "انتهى رمضان";
+        countdownElement.innerHTML = "انتهى رمضان منذ";
         return;
     }
+
+    var timeRemaining = ramadanStartDate - now;
 
     var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
     var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -33,7 +35,8 @@ function updateCountdown() {
     }
 
     var countdownElement = document.getElementById("countdown");
-    countdownElement.innerHTML = " باقي علي رمضان " + days + " " + daysText + " و " + hours + " " + hoursText + " و " + minutes + " " + minutesText + " و " + seconds + " " + secondsText;
+    var countdownPrefix = (timePassed >= 0) ? "بدأ رمضان منذ" : "باقي على رمضان";
+    countdownElement.innerHTML = countdownPrefix + " " + days + " " + daysText + " و " + hours + " " + hoursText + " و " + minutes + " " + minutesText + " و " + seconds + " " + secondsText;
 
     // التحديث كل ثانية
     setTimeout(updateCountdown, 1000);
