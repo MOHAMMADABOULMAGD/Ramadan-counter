@@ -33,9 +33,9 @@ function updateCountdown() {
         minutesText = "دقائق";
     }
 
-    var secondsText = "ثوانٍ";
+    var secondsText = "ثانية";
     if (seconds > 10 && seconds <= 60) {
-        secondsText = "ثانية";
+        secondsText = "ثوانٍ";
     }
 
     var countdownElement = document.getElementById("countdown");
