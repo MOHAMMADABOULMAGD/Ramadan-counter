@@ -1,12 +1,15 @@
-body {
-  font-family: "Aref Ruqaa Ink", serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  text-align: center;
+  background: url(https://i.postimg.cc/15jsHTmf/166702.jpg) center/cover no-repeat;
+  font-family: "Kufam", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
   margin: 0;
-  background: url(https://i.postimg.cc/15jsHTmf/166702.jpg) no-repeat center center fixed; /* تغيير خاصية الخلفية */
-  background-size: cover;
+  padding: 0;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-attachment: fixed;
 }
 
 #countdown {
