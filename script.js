@@ -1,1 +1,32 @@
-var ramadanStartDate=new Date("March 11, 2024").getTime();function updateCountdown(){var $=new Date().getTime(),a=$-ramadanStartDate;if(a>=2592e6){var t=document.getElementById("countdown");t.innerHTML="انتهى رمضان منذُ";return}var n=Math.abs(ramadanStartDate-$),r=Math.floor(n%864e5/36e5),e=Math.floor(n%36e5/6e4),o=Math.floor(n%6e4/1e3),d="ساعة";r>3&&r<10&&(d="ساعات");var u="دقيقة";e>3&&e<11&&(u="دقائق");var _="ثوانٍ";o>10&&o<=60&&(_="ثانية");var t=document.getElementById("countdown");t.innerHTML=(a>=0?"بدأ رمضان منذُ":"باقي على رمضان")+" "+Math.floor(n/864e5)+" يوم و "+r+" "+d+" و "+e+" "+u+" و "+o+" "+_,setTimeout(updateCountdown,1e3)}updateCountdown();
+var ramadanStartDate = new Date("March 11, 2024").getTime();
+
+function updateCountdown() {
+  var now = new Date().getTime();
+  var distance = ramadanStartDate - now;
+
+  if (distance <= 0) {
+    var elapsed = now - ramadanStartDate;
+    var countdownElement = document.getElementById("countdown");
+    countdownElement.innerHTML = "بدأ رمضان منذُ " + formatTime(elapsed);
+  } else {
+    var countdownElement = document.getElementById("countdown");
+    countdownElement.innerHTML = "باقي على رمضان " + formatTime(distance);
+  }
+
+  setTimeout(updateCountdown, 1000);
+}
+
+function formatTime(ms) {
+  var days = Math.floor(ms / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((ms % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((ms % (1000 * 60)) / 1000);
+
+  var hoursLabel = (hours > 3 && hours < 10) ? "ساعات" : "ساعة";
+  var minutesLabel = (minutes > 3 && minutes < 11) ? "دقائق" : "دقيقة";
+  var secondsLabel = (seconds > 10 && seconds <= 60) ? "ثوانٍ" : "ثانية";
+
+  return `${days} يوم و ${hours} ${hoursLabel} و ${minutes} ${minutesLabel} و ${seconds} ${secondsLabel}`;
+}
+
+updateCountdown();
