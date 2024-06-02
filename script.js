@@ -1,4 +1,4 @@
-var ramadanStartDate = new Date("March 11, 2024").getTime();
+var ramadanStartDate = new Date("March 1, 2025").getTime();
 
 function updateCountdown() {
   var now = new Date().getTime();
