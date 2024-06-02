@@ -5,17 +5,17 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  background: url(https://i.postimg.cc/15jsHTmf/166702.jpg) no-repeat center center fixed; /* تغيير خاصية الخلفية */
+  background: url(https://i.postimg.cc/15jsHTmf/166702.jpg) no-repeat center center fixed;
   background-size: cover;
 }
 
 #countdown {
-  font-size: 5vw; /* حجم النص بناءً على عرض الشاشة */
+  font-size: 5vw;
   color: #daa520;
   font-weight: bold;
   white-space: nowrap;
   overflow: hidden;
-  border-left: 4px solid; /* تغيير border-left إلى 2px لتكون أنسب للأجهزة الصغيرة */
+  border-left: 4px solid;
   animation: typing 2s steps(30, end), blink .5s step-end infinite alternate;
   direction: rtl;
 }
@@ -64,11 +64,11 @@ body {
   font-weight: bold;
   margin-right: 10px;
   margin-bottom: 20px;
-  transition: text-shadow 0.3s ease; /* إضافة تأثير انتقالي */
+  transition: text-shadow 0.3s ease;
 }
 
 .company-name:hover {
-  text-shadow: 4px 4px 8px rgba(255, 255, 255, 0.8); /* تأثير الظل عند تحويم الماوس */
+  text-shadow: 4px 4px 8px rgba(255, 255, 255, 0.8);
 }
 
 .nav-links {
@@ -85,11 +85,11 @@ body {
   text-decoration: none;
   font-size: 16px;
   font-weight: bold;
-  transition: text-shadow 0.3s ease; /* إضافة تأثير انتقالي */
+  transition: text-shadow 0.3s ease;
 }
 
 .nav-links a:hover {
-  text-shadow: 4px 4px 8px rgba(255, 255, 255, 0.8); /* تأثير الظل عند تحويم الماوس */
+  text-shadow: 4px 4px 8px rgba(255, 255, 255, 0.8);
 }
 
 footer {
@@ -102,9 +102,9 @@ footer {
   right: 0;
   width: 100%;
   text-align: center;
-  transition: text-shadow 0.3s ease; /* إضافة تأثير انتقالي */
+  transition: text-shadow 0.3s ease;
 }
 
 footer:hover {
-  text-shadow: 4px 4px 8px rgba(255, 255, 255, 0.300); /* تأثير الظل عند تحويم الماوس */
+  text-shadow: 4px 4px 8px rgba(255, 255, 255, 0.3);
 }
